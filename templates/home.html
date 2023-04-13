@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Indian Currency Classification with Audio Output</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-size: cover;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8); /* add a semi-transparent white background to your content area */
+      }
+      h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 18px;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      form {
+        margin-bottom: 20px;
+      }
+      .error {
+        color: red;
+        font-weight: bold;
+      }
+      .success {
+        color: green;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body style="background-image: url(/static/currency.jpg);">
+    <div class="container">
+      <h1>Indian Currency Classification with Audio Output</h1>
+      {% if error %}
+        <p class="error">{{ error }}</p>
+      {% endif %}
+      {% if success %}
+        <p class="success">The denomination was successfully recognized and spoken.</p>
+      {% endif %}
+      <form method="post" enctype="multipart/form-data">
+        <label for="file">Upload an image or audio file:</label>
+        <br>
+        <input type="file" name="file" id="file">
+        <br>
+        <button type="submit">Submit</button>
+      </form>
+      <p><strong>Note:</strong> Supported file types are .jpg, .jpeg, .png, and .wav.</p>
+    </div>
+  </body>
+</html>
